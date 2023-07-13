@@ -35,11 +35,10 @@ public class Ex2_2
 		System.out.println();
 		System.out.println("===== 두 변수의 값 교환 =====");
 		int a = 10, b = 20, tmp = 0;
-		System.out.println("a = " + a + " b = " + b);
+		System.out.println("a = " + a + " b = " + b + "c = ");
 		tmp = a;
 		a = b;
 		b = tmp;
-		System.out.println("a = " + a + " b = " + b);
 		
 		
 	}
