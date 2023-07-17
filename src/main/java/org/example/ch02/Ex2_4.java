@@ -32,5 +32,22 @@ public class Ex2_4
 		System.out.println(".10 = " + .10); // 0.10
 		System.out.println("10f = " + 10f);  // 10.0 (접미사는 생략)
 		System.out.println("1e3 = " + 1e3); // 1000.0
+		
+		char ch = 'A';
+		System.out.println("ch = " + ch);
+		
+		int i = 'A';
+		System.out.println("i = " + i); // 문자 'A'의 문자코드 65 출력
+		
+		String str = ""; // 빈문자열 empty string
+		String str2 = "ABCD";
+		String str3 = "123";
+		String str4 = str2 + str3;
+		System.out.println("str = " + str);
+		System.out.println("str2 = " + str2);
+		System.out.println("str4 = " + str4);
+		
+		System.out.println("(\"\" + 7 + 7) = " + ("" + 7 + 7)); // 77
+		System.out.println("(7 + 7 + \"\") = " + (7 + 7 + "")); // 14
 	}
 }
