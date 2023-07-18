@@ -18,6 +18,7 @@ public class Ex2_12
 		System.out.println("(str.charAt(0) - '0') = " + (str.charAt(0) - '0')); // 3
 		System.out.println("('3' - '0' + 1) = " + ('3' - '0' + 1)); // 문자 - '0' = 숫자로 변환 결과 : 4
 		System.out.println("(Integer.parseInt(\"3\") + 1) = " + (Integer.parseInt("3") + 1)); // 4
+		System.out.println("(Double.parseDouble(\"3\")) = " + (Double.parseDouble("3")));
 		System.out.println("(\"3\" + 1) = " + ("3" + 1)); // 31
 		System.out.println("(3 + '0') = " + (char)(3 + '0')); // 3
 	}
