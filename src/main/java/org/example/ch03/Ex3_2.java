@@ -21,5 +21,10 @@ public class Ex3_2
 		// j = i;
 		j = ++i; // 전위형
 		System.out.println("i = " + i + ", j = " + j); // i = 6, j = 6
+		
+		i = 5; j = 5;
+		System.out.println("i++ = " + i++); // 5
+		System.out.println("++i = " + ++j); // 6
+		System.out.println("i = " + i + ", j = " + j); // i = 6, j = 6
 	}
 }
