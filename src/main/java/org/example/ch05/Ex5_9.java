@@ -22,7 +22,7 @@ public class Ex5_9
 			tmp = ball[i];
 			ball[i] = ball[j];
 			ball[j] = tmp;
-			System.out.println("ball[i] = " + ball[i]);
+			System.out.println("ball["+ i + "] = " + ball[i]);
 		}
 	}
 }
