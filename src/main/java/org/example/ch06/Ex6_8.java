@@ -22,7 +22,7 @@ public class Ex6_8
 		
 	}
 	
-	static void change(int number)
+	static void change(int number) // 기본형 매개변수, 단순히 값을 복사한 것임
 	{
 		number = 1000; // 지역변수 number 을 변경한 것
 		System.out.println("change() number : " + number);
