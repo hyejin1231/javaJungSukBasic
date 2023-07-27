@@ -1,11 +1,11 @@
 package org.example.ch07;
 
 /**
- * ch07. 클래스간의 관계, 상속과 포함
+ * ch07. 클래스간의 관계, 상속과 포함, 단일 상속, Object 클래스
  * 포함 관계
  * : 클래스의 멤버로 참조변수를 선언하는 것
  */
-class MyPoint {
+class MyPoint /* extends Object */{ // 컴파일 하면 컴파일러가 자동으로 Object 상속을 넣는다.
 	int x;
 	int y;
 }
@@ -42,5 +42,7 @@ public class InheritanceTest
 		System.out.println("myCircle2.point.x = " + myCircle2.point.x);
 		System.out.println("myCircle2.point.y = " + myCircle2.point.y);
 		System.out.println("myCircle2.r = " + myCircle2.r);
+		
+		System.out.println("myCircle2.toString() = " + myCircle2.toString()); // toString() 생략 가능
 	}
 }
