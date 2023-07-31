@@ -1,7 +1,7 @@
 package org.example.ch07.tmp;
 
 /**
- * ch07. 참조변수의 형변환(1)
+ * ch07. 참조변수의 형변환(1) ~ (2)
  */
 public class Car
 {
@@ -10,11 +10,11 @@ public class Car
 	
 	void drive()
 	{
-	
+		System.out.println("Car.drive");
 	}
 	
 	void stop()
 	{
-	
+		System.out.println("Car.stop");
 	}
 }
