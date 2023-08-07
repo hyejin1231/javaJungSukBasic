@@ -7,7 +7,10 @@ public class Outer
 {
 	class InstanceInner {} // 인스턴스 클래스
 	
-	static class StaticInner {} // 스태틱 클래스
+	static class StaticInner {
+		int iv = 200;
+		static int cv = 200;
+	} // 스태틱 클래스
 	
 	void method()
 	{
