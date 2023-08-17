@@ -4,6 +4,8 @@ import java.util.Objects;
 
 /**
  * ch09. hashCode(), toString()
+ * hashCode() : 객체 자신의 해시코드를 반환한다.
+ * toString() : 객체 자신의 정보를 문자열로 반환한다.
  */
 public class Card
 {
@@ -21,14 +23,17 @@ public class Card
 		this.number = number;
 	}
 	
+	// 인스턴스 변수의 값을 비교하도록 equals() 오버라이딩
 	@Override
 	public boolean equals(Object obj)
 	{
+		// 참조변수의 형변환 전환은 반드시 instanceOf 로 확인해야함
 		if (! (obj instanceof Card)) {
 			return false;
 		}
 		
-		Card card = (Card) obj;
+		// obj는 Object 타입이기 때문에 kind, number 값을 참조하기 위해서는 Card 타입으로 형변환이 필요함
+		Card card = (Card) obj; // obj를 Card로 형변환
 		
 		return this.kind.equals(card.kind) && this.number == card.number;
 	}
