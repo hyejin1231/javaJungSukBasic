@@ -13,14 +13,14 @@ public class Ex10_6 {
 
         // add() : 특정 필드의 값을 증가 또는 감소 (다른 필드에 영향 x)
         date.add(Calendar.DATE, 1);  // 날짜에 1 더하기
-        date.add(Calendar.MONTH, -8); // 월에 -1 하기
+        date.add(Calendar.MONTH, -1); // 월에 -1 하기
         System.out.println("date.toString() = " + toString(date));
 
         // roll() : 특정 필드의 값을 증가 또는 감소 (다른 필드에 영향 x)
         date.set(2020, 7, 31);
 
         date.roll(Calendar.DATE, 1); // 날짜에 1을 더한다.
-        date.roll(Calendar.MONTH, -8); // 월에 8을 뺀다.
+        date.roll(Calendar.MONTH, -1); // 월에 8을 뺀다.
         System.out.println("date.toString() = " + toString(date));
     }
 
