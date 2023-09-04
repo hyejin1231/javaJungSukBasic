@@ -25,6 +25,5 @@ public class Ex11_10
 				}
 			}
 		}
-		
 	}
 }
