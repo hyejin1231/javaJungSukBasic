@@ -6,8 +6,7 @@ package org.example.ch12;
 
 enum Direction2
 {
-	EAST(1, ">"), SOUTH(2, "V"), WEST(3, "<"), NORTH(4, "^"),
-	;
+	EAST(1, ">"), SOUTH(2, "V"), WEST(3, "<"), NORTH(4, "^");
 	
 	private static final Direction2[] DIR_ARR = Direction2.values();
 	private final int value;
