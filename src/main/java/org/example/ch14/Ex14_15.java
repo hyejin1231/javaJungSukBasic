@@ -22,6 +22,11 @@ public class Ex14_15 {
         // 조건에 일치하는 요소 찾기 : findFirst(), findAny()
 
         // reduce() : 스트림의 요소를 하나씩 줄여가며 누적 연산 수행
+        // collect() : 그룹별로 reduce!! , Collector 를 매개변수로 하는 스트림의 최종 연산
+        // Collector : 인터페이스, collect에 필요한 메서드를 정의해 놓은 인터페이스
+        // Collectors : 클래스ㅡ 다양한 기능의 Collector 를 구현한 클래스 제공
+
+
 
 
 
