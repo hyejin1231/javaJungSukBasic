@@ -42,6 +42,7 @@ public class FindCharacter {
     public int solution2(String input, char character) {
         int answer = 0;
         input = input.toUpperCase();
+        character = Character.toLowerCase(character);
         for (int i = 0; i < input.length(); i++) {
             if (input.charAt(i) == character) answer++;
         }
