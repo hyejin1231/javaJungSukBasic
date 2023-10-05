@@ -28,6 +28,10 @@ public class Ex14_8
 		Stream<String> stringStream = Arrays.stream(strArr);
 		stringStream.forEach(System.out::print);
 		
+		// 특정 범위의 정수를 요소로 갖는 스트림 생성
+		System.out.println();
+		IntStream range = IntStream.range(1, 10);
+		range.forEach(System.out::print); // 123456789
 		
 		// 기본형 스트림은 기본 스트림보다 count, sum 등 추가적 메서드도 제공
 		System.out.println();
