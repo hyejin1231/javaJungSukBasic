@@ -48,7 +48,6 @@ public class StringCompression {
         char[] chars = input.toCharArray();
         int sum = 0;
 
-
         for (int i = 0; i < chars.length; i++) {
             for (int j = i; j < chars.length; j++) {
                 if (chars[i] == chars[j]) {
