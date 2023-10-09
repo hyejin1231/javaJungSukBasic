@@ -1,4 +1,4 @@
-package code.test.ch01;
+package code.test.ch02;
 
 import java.util.ArrayList;
 import java.util.Scanner;
