@@ -38,6 +38,9 @@ public class SumOfConsecutiveNumbers {
         System.out.println();
         int result2 = sumOfConsecutiveNumbers.solution2(n);
         System.out.println("result2 = " + result2);
+
+        int result3 = sumOfConsecutiveNumbers.solution3(n);
+        System.out.println("result3 = " + result3);
     }
 
     public int solution(int n) {
@@ -81,6 +84,19 @@ public class SumOfConsecutiveNumbers {
             }
         }
 
+
+        return answer;
+    }
+
+    // 수학적 방법으로 풀어보기
+    public int solution3(int n) {
+        int answer = 0, cnt = 1; // cnt는 연속된 수의 개수
+        n--;
+        while (n > 0) {
+            cnt++;
+            n = n - cnt;
+            if (n % cnt == 0) answer++;
+        }
 
         return answer;
     }
