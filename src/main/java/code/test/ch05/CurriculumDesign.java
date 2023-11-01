@@ -46,6 +46,11 @@ public class CurriculumDesign
 		
 		String result = curriculumDesign.solution(sub, design);
 		System.out.print(result);
+
+		System.out.println();
+		String result2 = curriculumDesign.solution2(sub, design);
+		System.out.println("result2 = " + result2);
+
 	}
 	
 	public String solution(String sub, String design)
@@ -70,4 +75,29 @@ public class CurriculumDesign
 		
 		return tmp.equals(sub) ? "YES" : "NO";
 	}
+
+	public String solution2(String need,String plan) {
+		String answer = "YES";
+		Queue<Character> queue = new LinkedList<>();
+
+		for (char c : need.toCharArray()) {
+			queue.offer(c); // 필수 과목 세팅
+		}
+
+		for (char c : plan.toCharArray()) {
+			if (queue.contains(c)) {
+				if (c != queue.poll()) {
+					return "NO";
+				}
+			}
+		}
+
+		if (!queue.isEmpty()) {
+			return "NO";
+		}
+
+		return answer;
+	}
+
+
 }
