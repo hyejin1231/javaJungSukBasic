@@ -69,7 +69,6 @@ public class EmergencyRoom
 	
 	public int solution(int n, int m, int[] arr)
 	{
-		int answer = 0;
 		Queue<Patient> queue = new LinkedList<>();
 		
 		Patient mPatient = new Patient(arr[m], m);
