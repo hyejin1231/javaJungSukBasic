@@ -1,11 +1,9 @@
 package code.test.ch05;
 
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 /**
  * ch05. Stack, Queue (자료구조)
@@ -60,32 +58,140 @@ public class EmergencyRoom
 		{
 			arr[i] = scanner.nextInt();
 		}
-		
+
 		int result = emergencyRoom.solution(n, m, arr);
 		System.out.print(result);
+
+		System.out.println();
+		int result2 = emergencyRoom.solution2(n, m, arr);
+		System.out.println("result2 = " + result2);
 	}
 	
 	public int solution(int n, int m, int[] arr)
 	{
 		int answer = 0;
-		int[] tmp = new int[n];
+		Queue<Patient> queue = new LinkedList<>();
 		
-		for (int i = 0; i< tmp.length; i++)
+		Patient mPatient = new Patient(arr[m], m);
+		for (int i = 0; i < arr.length; i++)
 		{
-			tmp[i] = arr[i] + n--;
+			queue.offer(new Patient(arr[i], i));
 		}
-
-		Arrays.sort(tmp);
-		System.out.println("Arrays.toString(tmp) = " + Arrays.toString(tmp));
 		
-		for (int i = tmp.length-1; i >= 0; i--)
+		int cnt = 0;
+		while (true)
 		{
-			m--;
-			if (m == 0) {
-				answer = tmp[i];
+			int max = 0;
+			for (Patient patient : queue)
+			{
+				if (patient.getRisk() > max) {
+					max = patient.getRisk();
+				}
+			}
+			
+			if (queue.peek().getRisk() >= max) {
+				if (queue.peek().equals(mPatient)) {
+					cnt++;
+					break;
+				}else
+				{
+					cnt ++;
+					queue.poll();
+				}
+			} else {
+				queue.offer(queue.poll());
+			}
+		}
+		
+		
+		return cnt;
+	}
+	
+	public int solution2(int n, int m, int[] arr)
+	{
+		int answer = 0;
+		Queue<Person> queue = new LinkedList<>();
+		for (int i = 0; i < n; i++)
+		{
+			queue.offer(new Person(i, arr[i]));
+		}
+		
+		while (!queue.isEmpty())
+		{
+			Person tmp = queue.poll();
+			for (Person x : queue)
+			{
+				if (x.priority > tmp.priority)
+				{
+					queue.offer(tmp);
+					tmp = null;
+					break;
+				}
+			}
+			
+			if (tmp != null) { // tmp의 우선순위가 제일 높다는 뜻 !
+				answer++;
+				if (tmp.id == m)
+					return answer;
 			}
 		}
 		
 		return answer;
+	}
+	
+}
+
+class Patient
+{
+	int risk;
+	int order;
+	
+	public Patient()
+	{
+	}
+	
+	public Patient(int risk, int order)
+	{
+		this.risk = risk;
+		this.order = order;
+	}
+	
+	public int getRisk()
+	{
+		return risk;
+	}
+	
+	public int getOrder()
+	{
+		return order;
+	}
+	
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		Patient patient = (Patient) o;
+		return risk == patient.risk && order == patient.order;
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return Objects.hash(risk, order);
+	}
+}
+
+class Person
+{
+	int id;
+	int priority;
+	
+	public Person(int id, int priority)
+	{
+		this.id = id;
+		this.priority = priority;
 	}
 }
