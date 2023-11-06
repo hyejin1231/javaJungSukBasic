@@ -1,5 +1,6 @@
 package code.test.ch06;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -44,6 +45,10 @@ public class InsertionSort
 		{
 			System.out.print(i + " ");
 		}
+		
+		System.out.println();
+		int[] result2 = insertionSort.solution2(n, arr);
+		System.out.println("Arrays.toString(result2) = " + Arrays.toString(result2));
 	}
 	
 	//6
@@ -63,6 +68,28 @@ public class InsertionSort
 				}
 				key--;
 			}
+		}
+		
+		return arr;
+	}
+	
+	public int[] solution2(int n, int[] arr)
+	{
+		for (int i = 1; i < n; i++)
+		{
+			int tmp = arr[i], j;
+			for ( j = i - 1; j >= 0; j--)
+			{
+				if (arr[j] > tmp)
+				{
+					arr[j + 1] = arr[j];
+				}
+				else
+				{
+					break;
+				}
+			}
+			arr[j + 1] = tmp;
 		}
 		
 		return arr;
