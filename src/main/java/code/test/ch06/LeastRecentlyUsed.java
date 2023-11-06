@@ -1,6 +1,7 @@
 package code.test.ch06;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -51,6 +52,11 @@ public class LeastRecentlyUsed
 		{
 			System.out.print(i + " ");
 		}
+		
+		System.out.println();
+		int[] result2 = leastRecentlyUsed.solution2(s, n, arr);
+		System.out.println("Arrays.toString(result2) = " + Arrays.toString(result2));
+		
 	}
 	
 	public ArrayList<Integer> solution(int s, int n, int[] arr)
@@ -85,5 +91,36 @@ public class LeastRecentlyUsed
 		}
 		
 		return answer;
+	}
+	
+	public int[] solution2(int size, int n, int[] arr)
+	{
+		int[] cache = new int[size];
+		for (int x : arr)
+		{
+			int pos = -1; // 인덱스 번호 (위치)
+			for (int i = 0; i< size; i++)
+			{
+				if (x == cache[i]) { // hit !
+					pos = i;
+				}
+			}
+			if (pos == -1) { // miss 상황
+				for (int i = size-1; i >= 1; i--)
+				{
+					cache[i] = cache[i - 1];
+				}
+			}else // hit 처리
+			{
+				for (int i = pos; i >= 1; i--)
+				{
+					cache[i] = cache[i - 1];
+				}
+			}
+			cache[0] = x;
+		}
+		
+		
+		return cache;
 	}
 }
