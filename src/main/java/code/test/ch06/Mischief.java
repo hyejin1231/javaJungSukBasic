@@ -41,17 +41,23 @@ public class Mischief
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
 		int[] arr = new int[n];
-		
+
 		for (int i =0 ; i< n; i++)
 		{
 			arr[i] = scanner.nextInt();
 		}
-		
+		int[] arr2 = arr.clone();
+
 		ArrayList<Integer> result = mischief.solution(n, arr);
 		for (Integer integer : result)
 		{
 			System.out.print(integer + " ");
 		}
+
+		System.out.println();
+		ArrayList<Integer> result2 = mischief.solution2(n, arr2);
+		System.out.println("result2 = " + result2);
+
 	}
 	
 	public ArrayList<Integer> solution(int n, int[] arr)
@@ -69,4 +75,20 @@ public class Mischief
 		
 		return answer;
 	}
+
+	// 정렬을 이용해서 푸는 방법 !
+	public ArrayList<Integer> solution2(int n, int[] arr) {
+		ArrayList<Integer> answer = new ArrayList<>();
+		int[] tmp = arr.clone(); // 깊은 복사
+		Arrays.sort(tmp);
+
+		for (int i = 0; i < n; i++) {
+			if (arr[i] != tmp[i]) {
+				answer.add(i + 1);
+			}
+		}
+		return answer;
+	}
+
+
 }
