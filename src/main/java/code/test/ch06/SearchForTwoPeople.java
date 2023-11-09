@@ -42,6 +42,11 @@ public class SearchForTwoPeople
 		}
 		int result = searchForTwoPeople.solution(n, m, arr);
 		System.out.print(result);
+		
+		System.out.println();
+		int result2 = searchForTwoPeople.solution2(n, m, arr);
+		System.out.println("result2 = " + result2);
+		
 	}
 	
 	public int solution(int n, int m, int[] arr)
@@ -54,6 +59,32 @@ public class SearchForTwoPeople
 		{
 			if (arr[i] == m) {
 				return i + 1;
+			}
+		}
+		
+		return answer;
+	}
+	
+	// 이분 검색을 이용하는 풀이!! (내가 한 풀이는 시간 복잡도가 O(n)
+	public int solution2(int n, int m, int[] arr)
+	{
+		int answer = 0;
+		Arrays.sort(arr); // 이분 검색은 정렬을 기반으로 해야함
+		
+		int lt = 0, rt = n-1;
+		while (lt <= rt)
+		{
+			int mid = (lt + rt) / 2;
+			
+			if (arr[mid] == m) {
+				answer = mid + 1;
+				break;
+			}
+			
+			if (arr[mid] > m) {
+				rt = mid-1;
+			}else {
+				lt = mid + 1;
 			}
 		}
 		
