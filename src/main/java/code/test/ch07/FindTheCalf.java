@@ -31,6 +31,17 @@ public class FindTheCalf
 		if (n == 0) {
 			return;
 		}else {
+			DFS(n-1);
+			System.out.print(n + " "); // 1 2 3
+		}
+	}
+	
+	public void DFS2(int n)
+	{
+		if (n == 0) {
+			System.out.println();
+			return;
+		}else {
 			System.out.print(n + " "); // 3 2 1
 			DFS(n-1);
 			System.out.print(n + " "); // 1 2 3
