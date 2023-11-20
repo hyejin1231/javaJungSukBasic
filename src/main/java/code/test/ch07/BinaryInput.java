@@ -35,9 +35,8 @@ public class BinaryInput
 	
 	public void DFS(int n)
 	{
-		if (n == 0) {
-			return;
-		}else {
+		if (n == 0) return;
+		else {
 			DFS(n / 2);
 			System.out.print(n % 2+"");
 		}
