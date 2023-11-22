@@ -37,13 +37,16 @@ public class FindingASubset
 	public void DFS(int L)
 	{
 		if (L == n + 1) {
-			for (int i = 0; i < ch.length; i++)
+			String tmp = "";
+			for (int i = 1; i <= n; i++)
 			{
-				if (ch[i] != 0) {
-					System.out.print(i + " ");
+				if (ch[i] == 1) {
+					tmp += i + " ";
 				}
 			}
-			System.out.println();
+			if (tmp.length() > 0) {
+				System.out.println(tmp);
+			}
 		}else {
 			ch[L] = 1;
 			DFS(L + 1); // 트리의 왼쪽 (사용한다)
