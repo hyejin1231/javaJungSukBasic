@@ -74,7 +74,7 @@ public class FindTheCalf
 		Scanner scanner = new Scanner(System.in);
 		int s = scanner.nextInt(); // 현수의 위치
 		int e = scanner.nextInt(); // 송아지의 위치
-		ch = new int[10000];
+		ch = new int[10001];
 		
 		int result = findTheCalf.BFS(s, e);
 		System.out.println(result);
