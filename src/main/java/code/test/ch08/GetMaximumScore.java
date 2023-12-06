@@ -37,13 +37,13 @@ public class GetMaximumScore
 	
 	public void DFS(int L, int time, int sum)
 	{
-		if (time > 20) {
+		if (time > m) {
 			return;
 		}
 		if (L == n) {
-		
+			if (sum > max) max = sum;
 		}else {
-			DFS(L + 1, time - times[L], sum + score[L]);
+			DFS(L + 1, time + times[L], sum + score[L]);
 			DFS(L + 1, time, sum);
 		}
 	}
